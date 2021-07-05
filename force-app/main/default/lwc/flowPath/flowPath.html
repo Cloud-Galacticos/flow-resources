@@ -1,0 +1,17 @@
+<!--
+  @description       : FlowPath
+  @author            : agentgill
+  @group             : 
+  @last modified on  : 07-05-2021
+  @last modified by  : agentgill
+  Modifications Log 
+  Ver   Date         Author      Modification
+  1.0   07-05-2021   agentgill   Initial Version
+-->
+<template>
+    <lightning-progress-indicator class="slds-align_absolute-center" current-step={currentStage} type={flowType} variant={flowVariant}>
+        <template for:each={activeStages} for:item="stage">
+            <lightning-progress-step key={stage} label={stage} value={stage}></lightning-progress-step>
+        </template>
+    </lightning-progress-indicator>
+</template>
