@@ -19,7 +19,7 @@ TODO: ON click of button - console log the JSON output
   
  **/
 import { LightningElement } from 'lwc';
-import getFormFields from '@salesforce/apex/dynamicFormController.getForm';
+import getFormFields from '@salesforce/apex/DynamicFormController.getForm';
 export default class DynamicForm extends LightningElement {
     fields;
     error;
