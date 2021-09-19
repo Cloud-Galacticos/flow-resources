@@ -2,23 +2,22 @@
   @description       : dynamicForm
   @author            : agentgill
   @group             : 
-  @last modified on  : 07-21-2021
+  @last modified on  : 09-19-2021
   @last modified by  : agentgill
   Modifications Log 
   Ver   Date         Author      Modification
   1.0   07-14-2021   agentgill   Initial Version
 -->
 <template>
-    <div class="slds-m-top_medium slds-m-bottom_x-large">
-      <h2 class="slds-text-heading_medium slds-m-bottom_medium">
-        Here are my fields!
-      </h2>
-      <template for:each={fields} for:item="field">
-        <lightning-input
-          key={field.FieldName}
-          type={field.FieldType}
-          label={field.FieldName}
-        ></lightning-input>
-      </template>
-    </div>
-  </template>
+    <lightning-card title="Simple Dynamic Form" icon-name="custom:custom19">
+        <div class="slds-var-m-around_medium">
+            <template for:each={fields} for:item="field">
+                <lightning-input
+                    key={field.FieldName}
+                    type={field.FieldType}
+                    label={field.FieldName}
+                ></lightning-input>
+            </template>
+        </div>
+    </lightning-card>
+</template>
