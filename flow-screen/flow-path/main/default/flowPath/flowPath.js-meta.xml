@@ -10,8 +10,8 @@
         <targetConfig targets="lightning__FlowScreen">
             <property name="currentStage" label="Current Stage" type="String"/>
             <property name="activeStages" label="Active Stages" type="String[]"/>
-            <property name="flowType" label="Path Type" type="String" default="path"/>
-            <property name="flowVariant" label="Path Variant" type="String" default="path"/>
+            <property name="pathType" label="Path Type" type="String" default="path"/>
+            <property name="pathVariant" label="Path Variant" type="String" default="path"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

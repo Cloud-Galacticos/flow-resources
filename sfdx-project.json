@@ -3,10 +3,18 @@
     {
       "path": "force-app",
       "default": true
+    },
+    {
+      "path": "flow-screen/flow-path",
+      "default": false
+    },
+    {
+      "path": "flow-screen/dynamic-form",
+      "default": false
     }
   ],
   "name": "flow-resources",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "51.0"
+  "sourceApiVersion": "52.0"
 }
