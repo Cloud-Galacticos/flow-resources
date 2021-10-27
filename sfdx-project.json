@@ -2,7 +2,7 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": false
+      "default": true
     },
     {
       "path": "flow-screen/flow-path",
@@ -10,7 +10,7 @@
     },
     {
       "path": "flow-screen/dynamic-form",
-      "default": true
+      "default": false
     }
   ],
   "name": "flow-resources",
