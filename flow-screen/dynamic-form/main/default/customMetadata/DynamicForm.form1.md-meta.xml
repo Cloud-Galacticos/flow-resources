@@ -7,13 +7,18 @@
         <value xsi:type="xsd:string">[
 {
       &quot;FieldLabel&quot;: &quot;My String Field&quot;,
-      &quot;FieldName&quot;: &quot;My String Field&quot;,
-      &quot;FieldType&quot;: &quot;Text&quot;
+      &quot;FieldName&quot;: &quot;MyStringField&quot;,
+      &quot;FieldType&quot;: &quot;text&quot;
    },
 {
       &quot;FieldLabel&quot;: &quot;My Date Field&quot;,
-      &quot;FieldName&quot;: &quot;My Date Field&quot;,
-      &quot;FieldType&quot;: &quot;Date&quot;
+      &quot;FieldName&quot;: &quot;MyDateField&quot;,
+      &quot;FieldType&quot;: &quot;date&quot;
+   },
+{
+      &quot;FieldLabel&quot;: &quot;String Field&quot;,
+      &quot;FieldName&quot;: &quot;MyStringField2&quot;,
+      &quot;FieldType&quot;: &quot;text&quot;
    }
 
 ]</value>
