@@ -33,21 +33,24 @@ public without sharing class UpsertRecords {
         inputCollection.add(inputRecord);
       }
 
+      List<Database.upsertResult> results = new List<Database.upsertResult>();
       if (externalIdField != null) {
-        List<Database.upsertResult> results = Database.upsert(
-          inputCollection,
-          externalIdField,
-          allOrNone
-        );
+        results = Database.upsert(inputCollection, externalIdField, allOrNone);
       } else {
-        List<Database.upsertResult> results = Database.upsert(
-          inputCollection,
-          allOrNone
-        );
+        results = Database.upsert(inputCollection, allOrNone);
+      }
+      Set<Id> ids = new Set<Id>();
+
+      for (Database.upsertResult result : results) {
+        System.assert(result.isSuccess());
+        ids.add(result.getId());
       }
 
       //Create a Results object to hold the return values
       Results response = new Results();
+      List<Id> idsList = new List<Id>();
+      idsList.addAll(ids);
+      response.upsertedIds = idsList;
 
       responseWrapper.add(response);
     }
@@ -92,6 +95,9 @@ public without sharing class UpsertRecords {
   public class Results {
     @InvocableVariable
     public String placeholder; //don't ask (OMG)
+
+    @InvocableVariable
+    public List<Id> upsertedIds;
   }
 
   public class InvocableActionException extends Exception {
