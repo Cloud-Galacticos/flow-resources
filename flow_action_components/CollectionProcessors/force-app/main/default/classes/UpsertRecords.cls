@@ -33,18 +33,11 @@ public without sharing class UpsertRecords {
         inputCollection.add(inputRecord);
       }
 
-      List<Database.upsertResult> results = new List<Database.upsertResult>();
-      if (externalIdField != null) {
-        results = Database.upsert(inputCollection, externalIdField, allOrNone);
-      } else {
-        results = Database.upsert(inputCollection, allOrNone);
-      }
-      Set<Id> ids = new Set<Id>();
-
-      for (Database.upsertResult result : results) {
-        System.assert(result.isSuccess());
-        ids.add(result.getId());
-      }
+      Set<Id> ids = saveUpsertResults(
+        inputCollection,
+        externalIdField,
+        allOrNone
+      );
 
       //Create a Results object to hold the return values
       Results response = new Results();
@@ -58,6 +51,40 @@ public without sharing class UpsertRecords {
     return responseWrapper;
   }
 
+  /**
+   * @description Save Upsert Results
+   * @author agentgill | 10-27-2021
+   * @param inputCollection
+   * @param externalIdField
+   * @param allOrNone
+   * @return Set<Id>
+   **/
+  private static Set<Id> saveUpsertResults(
+    List<SObject> inputCollection,
+    Schema.SObjectField externalIdField,
+    Boolean allOrNone
+  ) {
+    Set<Id> ids = new Set<Id>();
+    List<Database.upsertResult> results = new List<Database.upsertResult>();
+    if (externalIdField != null) {
+      results = Database.upsert(inputCollection, externalIdField, allOrNone);
+    } else {
+      results = Database.upsert(inputCollection, allOrNone);
+    }
+
+    for (Database.upsertResult result : results) {
+      System.assert(result.isSuccess());
+      ids.add(result.getId());
+    }
+    return ids;
+  }
+
+  /**
+   * @description getExternalIdField
+   * @author agentgill | 10-27-2021
+   * @param externalIdFieldName
+   * @return Schema.SObjectField
+   **/
   private static Schema.SObjectField getExternalIdField(
     String externalIdFieldName
   ) {
