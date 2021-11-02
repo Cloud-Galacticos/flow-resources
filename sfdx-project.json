@@ -16,5 +16,16 @@
   "name": "flow-resources",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "52.0"
+  "sourceApiVersion": "52.0",
+  "packageAliases": {
+    "FlowActionsBasePack@2.26.0-0": "04t4W00000308RmQAI",
+    "FlowActionsBasePack@2.32.0-0": "04t4W0000034KebQAE",
+    "FlowScreenComponentsBasePack@2.5.0-0": "04t5G0000047xMDQAY",
+    "FlowScreenComponentsBasePack@3.0.4-0": "04t5G000004PuV8QAK",
+    "datatable@3.3.0-0": "04t5G0000047xMwQAI",
+    "recordDetail_1@1.7.4-0": "04t5G0000047xDuQAI",
+    "improvedFileUpload@1.3.1-0": "04t5G000003rUbAQAU",
+    "dataMapper@1.1.0-0": "04t5G0000047xKbQAI",
+    "CollectionActionsL@1.30.0-0": "04t5G0000047xOOQAY"
+  }
 }
